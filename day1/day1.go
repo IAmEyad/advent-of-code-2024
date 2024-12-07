@@ -4,11 +4,11 @@ import (
 	"bufio"
 	"fmt"
 	"log"
-	"os"
-	"strings"
-	"strconv"
-	"slices"
 	"math"
+	"os"
+	"slices"
+	"strconv"
+	"strings"
 )
 
 func main() {
@@ -17,15 +17,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	
+
 	defer file.Close()
-	
+
 	scanner := bufio.NewScanner(file)
 	scanner.Split(bufio.ScanLines)
-	
+
 	var inputLines []string
-	
-	for scanner.Scan(){
+
+	for scanner.Scan() {
 		inputLines = append(inputLines, scanner.Text())
 	}
 
@@ -39,13 +39,13 @@ func main() {
 	for _, line := range inputLines {
 		split_line := strings.Split(line, "   ")
 		split_int1, err := strconv.Atoi(split_line[0])
-		
+
 		if err != nil {
 			log.Fatal(err)
 		}
 
 		split_int2, err := strconv.Atoi(split_line[1])
-		
+
 		if err != nil {
 			log.Fatal(err)
 		}
@@ -57,15 +57,14 @@ func main() {
 	slices.Sort(list1)
 	slices.Sort(list2)
 	distance := 0
-	
+
 	for a, _ := range list1 {
 
 		fmt.Println(a)
 		dif := math.Abs(float64(list1[a] - list2[a]))
 		distance += int(dif)
 	}
-	
+
 	fmt.Println(distance)
 
 }
-
