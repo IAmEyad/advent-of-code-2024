@@ -1,3 +1,4 @@
 # Advent of Code 2024
 
-Only P1 solutions
+Now moved to SourceHut:
+https://git.sr.ht/~iameyad/advent-of-code-2024
